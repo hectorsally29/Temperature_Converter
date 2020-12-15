@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+public class tempConvert {
+
+    public static void main (String [] args){
+     // initializer
+     double F;
+     double C;
+     int userInput;
+     double sum;
+     String strFormat;
+
+    // Scanner
+    Scanner scan = new Scanner (System.in);
+
+
+    // This is the user input, either type in 1 or 0, or else the program will close
+    System.out.println("Are you converting Fahrenheit or Celsius?" + "\n" + " 1 = Fahrenheit and 0 = Celsius");
+    userInput = scan.nextInt();
+
+    // If the user types in wrong input than the system will close
+                if (userInput != 1 && userInput != 0) {
+                    System.out.println("Error! Invalid input, program now closing");
+                    System.exit(0);
+                }
+
+
+        
+        
+        // Fahrenheit to Celsius
+        if(userInput == 1){
+            System.out.println("Enter Fahrenheit to convert to Celsius");
+            F = scan.nextDouble();
+
+            // Equation
+            sum = (F - 32) * 5/9;
+
+            // Print out the sum and rounding it to the second decimal
+            strFormat = String.format("%.2f", sum);
+            System.out.println("Converting " + F + " F to Celsius results in:");
+            System.out.println(strFormat + " C");
+        }
+
+        // Celsius to Fahrenheit
+        if(userInput == 0){
+            System.out.println("Enter Celsius to convert to Fahrenheit");
+            C = scan.nextDouble();
+
+            // Equation
+            sum = (C * 9/5) + 32;
+
+            // Print out the sum and rounding it to the second decimal
+            strFormat = String.format("%.2f", sum);
+            System.out.println("Converting " + C + " C to Fahrenheit results in:");
+            System.out.println(strFormat + " F");
+        }
+
+    }
+}
